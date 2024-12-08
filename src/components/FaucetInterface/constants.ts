@@ -1,5 +1,5 @@
 export const FAUCET_ADDRESS = '0x3395Cc803C7088492f5B94df3Cb488f929A7eAA2';
-export const TOKEN_ADDRESS = '0x9fBd8Ccf17D9895e8d8E39427a094F213f897c3c';
+export const TOKEN_ADDRESS = '0x665d7e4f9BF62793A4e758683AFdBa8F2fF66c65';
 
 export const FAUCET_ABI = [
     "function send() external",
