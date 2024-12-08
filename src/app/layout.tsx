@@ -22,6 +22,9 @@ const orbitron = Orbitron({
 export const metadata: Metadata = {
   title: 'Symphony Token Faucet',
   description: 'Claim your Symphony Tokens',
+  icons: {
+    icon: 'https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/thunder.png'
+  }
 }
 
 export default function RootLayout({
@@ -31,6 +34,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${zenDots.variable} ${orbitron.variable}`}>
+      <head>
+        <link rel="icon" href="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/thunder.png" />
+      </head>
       <body className={electrolize.className}>
         <nav className="fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
