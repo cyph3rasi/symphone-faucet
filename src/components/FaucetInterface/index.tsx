@@ -28,7 +28,9 @@ const FaucetInterface: React.FC = () => {
           onClaim={claimTokens}
           onClaimAgain={handleClaimAgain}
         />
-        <Instructions />
+        <div className="lg:col-span-6">
+          <Instructions />
+        </div>
         <TokenSetup key={`token-setup-container-${Date.now()}`} />
       </div>
     </div>

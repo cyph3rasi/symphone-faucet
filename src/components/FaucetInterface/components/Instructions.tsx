@@ -2,6 +2,7 @@ import React from 'react';
 
 export const Instructions = () => (
   <div className="space-y-6">
+    {/* General Instructions Section */}
     <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20">
       <h2 className="text-xl font-bold mb-4 font-zen-dots text-purple-300">Instructions</h2>
       <div className="space-y-3 text-sm text-gray-300">
@@ -13,15 +14,16 @@ export const Instructions = () => (
       </div>
     </div>
 
+    {/* Video Tutorial Section */}
     <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20">
       <h2 className="text-xl font-bold mb-4 font-zen-dots text-purple-300">Video Tutorial</h2>
-      <div className="relative w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-purple-500/30">
-        <div className="relative pb-[56.25%] h-0">
+      <div className="overflow-hidden rounded-xl shadow-xl bg-black/20">
+        <div className="relative w-full pt-[56.25%]">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
             src="https://www.youtube.com/embed/8TwyfnpmyVI"
             title="Symphony Token Tutorial"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            className="absolute top-0 left-0 w-full h-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
         </div>
