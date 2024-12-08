@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Spicy_Rice, Unbounded, Inter } from 'next/font/google';
+import { Unbounded, Spicy_Rice } from 'next/font/google';
 import './globals.css';
 
 const spicyRice = Spicy_Rice({
@@ -15,15 +15,29 @@ const unbounded = Unbounded({
   display: 'swap',
 });
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
   title: 'Free PEPE Token Faucet',
   description: 'Claim your Free PEPE tokens on Avalanche C-Chain',
+  icons: {
+    icon: [
+      {
+        url: 'https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/fav.png?t=2024-12-08T20%3A25%3A58.694Z',
+        sizes: 'any',
+      },
+    ],
+    shortcut: [
+      {
+        url: 'https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/fav.png?t=2024-12-08T20%3A25%3A58.694Z',
+        type: 'image/png',
+      },
+    ],
+    apple: [
+      {
+        url: 'https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/fav.png?t=2024-12-08T20%3A25%3A58.694Z',
+        type: 'image/png',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -32,8 +46,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${unbounded.variable} ${spicyRice.variable} ${inter.variable}`}>
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${unbounded.variable} ${spicyRice.variable}`}>
+      <head>
+        <link 
+          rel="icon" 
+          type="image/png" 
+          href="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/fav.png?t=2024-12-08T20%3A25%3A58.694Z"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
