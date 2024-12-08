@@ -10,8 +10,8 @@ export const TokenSetup = () => (
         
         <div className="space-y-3">
           <p>1. Open your MetaMask wallet and ensure you're connected to the Avalanche C-Chain network</p>
-          <p>2. Click on the "Assets" tab at the bottom of your wallet interface</p>
-          <p>3. Scroll down and locate the "Import Tokens" button, then click on it</p>
+          <p>2. Click on the tokens tab.</p>
+          <p>3. Click on the + icon.</p>
           <p>4. In the token import interface, select "Custom Token"</p>
           <p>5. Copy and paste the Symphony Token contract address:</p>
           <p className="font-mono text-xs break-all bg-black/30 p-2 rounded-lg select-all">
