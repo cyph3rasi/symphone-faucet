@@ -1,13 +1,14 @@
 import React from 'react';
-import { useWallet } from './hooks/useWallet';
-import { useFaucet } from './hooks/useFaucet';
-import { StarBackground } from './components/StarBackground';
-import { AboutToken } from './components/AboutToken';
-import { ClaimInterface } from './components/ClaimInterface';
-import { Instructions } from './components/Instructions';
-import { TokenSetup } from './components/TokenSetup';
+import { useWallet, useFaucet } from './hooks';
+import { 
+  StarBackground,
+  AboutToken,
+  ClaimInterface,
+  Instructions,
+  TokenSetup 
+} from './components';
 
-const FaucetInterface = () => {
+const FaucetInterface: React.FC = () => {
   const { account, loading: walletLoading, error: walletError, connectWallet } = useWallet();
   const { 
     loading: faucetLoading, 
