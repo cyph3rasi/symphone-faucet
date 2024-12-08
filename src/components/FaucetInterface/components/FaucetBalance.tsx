@@ -32,7 +32,7 @@ export const FaucetBalance: React.FC = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg rounded-3xl border border-purple-500/20 py-4 px-6">
+    <div className="relative overflow-hidden bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg rounded-3xl border border-purple-500/20 py-4 px-4 sm:px-6">
       {/* Cosmic aurora background effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-pink-800/30 to-purple-900/30 animate-pulse" />
       
@@ -51,7 +51,7 @@ export const FaucetBalance: React.FC = () => {
 
       <div className="relative z-10">
         <div className="flex flex-col items-center space-y-2">
-          <div className="text-sm font-zen-dots text-purple-300/80">Symphony Token Faucet Balance</div>
+          <div className="text-sm font-zen-dots text-purple-300/80 text-center">Symphony Token Faucet Balance</div>
           
           {loading ? (
             <div className="animate-pulse flex space-x-2 items-center">
@@ -59,17 +59,17 @@ export const FaucetBalance: React.FC = () => {
               <span className="text-purple-300 font-orbitron">SYMPH</span>
             </div>
           ) : error ? (
-            <p className="text-red-400 font-orbitron text-sm">{error}</p>
+            <p className="text-red-400 font-orbitron text-sm text-center">{error}</p>
           ) : (
-            <div className="flex items-baseline space-x-2">
-              <span className="text-4xl font-bold font-orbitron bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 text-transparent bg-clip-text">
+            <div className="flex flex-wrap items-baseline justify-center gap-2">
+              <span className="text-2xl sm:text-4xl font-bold font-orbitron bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 text-transparent bg-clip-text text-center">
                 {formatBalance(balance)}
               </span>
               <span className="text-purple-300 font-orbitron">SYMPH</span>
             </div>
           )}
           
-          <div className="text-xs text-gray-400/80 font-mono">
+          <div className="text-xs text-gray-400/80 font-mono break-all text-center px-2">
             {FAUCET_ADDRESS}
           </div>
         </div>
