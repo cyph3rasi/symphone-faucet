@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useFaucetBalance } from '../hooks/useFaucetBalance';
 import { FAUCET_ADDRESS } from '../constants';
 
 export const FaucetBalance: React.FC = () => {
   const { balance, loading, error } = useFaucetBalance();
+  const [particles, setParticles] = useState<Array<{ id: number, style: React.CSSProperties }>>([]);
+
+  useEffect(() => {
+    const newParticles = Array.from({ length: 20 }, (_, i) => ({
+      id: i,
+      style: {
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+        animationDelay: `${Math.random() * 5}s`,
+        animationDuration: `${5 + Math.random() * 5}s`
+      }
+    }));
+    setParticles(newParticles);
+  }, []);
 
   const formatBalance = (balance: string) => {
     const num = parseFloat(balance);
@@ -17,16 +31,11 @@ export const FaucetBalance: React.FC = () => {
       
       {/* Floating particles effect */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
+        {particles.map(particle => (
           <div
-            key={i}
+            key={particle.id}
             className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${5 + Math.random() * 5}s`
-            }}
+            style={particle.style}
           />
         ))}
       </div>
