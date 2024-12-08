@@ -47,7 +47,7 @@ const FaucetInterface: React.FC = () => {
                   <div className="h-[1px] mt-1 bg-gradient-to-r from-transparent via-lime-400 to-transparent opacity-30 group-hover:opacity-50 transition-opacity duration-300 animate-pulse" />
                 </div>
                 <p className="text-gray-200 font-unbounded text-lg tracking-wide mt-4 opacity-90">
-                  Claim your 3.333 Free PEPE
+                  Claim your 3,333 Free PEPE
                 </p>
               </div>
 
