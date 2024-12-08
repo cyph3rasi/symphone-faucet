@@ -5,10 +5,13 @@ import { FaucetBalance } from './FaucetBalance';
 
 export const HeaderLogo: React.FC = () => {
   return (
-    <div className="w-full flex flex-col items-center py-4 space-y-6">
+    <div className="w-full flex flex-col items-center py-4 space-y-8">
+      {/* Faucet Balance Above */}
+      <FaucetBalance />
+      
       <Link 
         href="https://fallenones.xyz" 
-        className="group relative inline-flex items-center text-center py-8"
+        className="group relative inline-flex items-center text-center"
       >
         {/* PEPE Logo */}
         <div className="relative w-32 md:w-40 lg:w-44 mr-4 md:mr-6 lg:mr-8 animate-title-float">
@@ -26,7 +29,7 @@ export const HeaderLogo: React.FC = () => {
         <div className="relative">
           {/* Main Title */}
           <h1 className="text-7xl md:text-8xl lg:text-9xl font-spicy-rice relative animate-title-float">
-            {/* Shadow layer - Now with exact matching positioning */}
+            {/* Shadow layer */}
             <span className="absolute -z-10 blur-sm text-green-950/40 translate-x-[6px] translate-y-[6px]">
               Free PEPE
             </span>
@@ -42,11 +45,6 @@ export const HeaderLogo: React.FC = () => {
           <div className="absolute -bottom-4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-lime-400 to-transparent opacity-30 group-hover:opacity-75 transition-all duration-500 delay-100 animate-line-float-slow" />
         </div>
       </Link>
-
-      {/* Balance display */}
-      <div className="w-full max-w-md transform hover:scale-[1.02] transition-transform duration-300">
-        <FaucetBalance />
-      </div>
     </div>
   );
 };
