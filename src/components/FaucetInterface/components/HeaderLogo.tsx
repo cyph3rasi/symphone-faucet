@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { FaucetBalance } from './FaucetBalance';
 
 export const HeaderLogo: React.FC = () => {
   return (
-    <div className="w-full flex justify-center py-4">
+    <div className="w-full flex flex-col items-center py-4 space-y-6">
       <Link 
         href="https://fallenones.xyz" 
         className="group relative inline-block text-center hover:scale-105 transition-transform duration-300 ease-in-out"
@@ -20,6 +21,11 @@ export const HeaderLogo: React.FC = () => {
         {/* Subtle shimmer effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer opacity-0 group-hover:opacity-30" />
       </Link>
+
+      {/* Balance display with enhanced styling */}
+      <div className="w-full max-w-md transform hover:scale-[1.02] transition-transform duration-300">
+        <FaucetBalance />
+      </div>
     </div>
   );
 };
