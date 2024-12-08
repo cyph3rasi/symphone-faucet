@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
-import { Orbitron } from 'next/font/google';
-import localFont from 'next/font/local';
+import { Orbitron, Zen_Dots, Spicy_Rice } from 'next/font/google';
 import './globals.css';
 
 const orbitron = Orbitron({ 
@@ -9,9 +8,6 @@ const orbitron = Orbitron({
   display: 'swap',
 });
 
-// Import Spicy Rice as a Google Font with proper formatting
-import { Spicy_Rice } from 'next/font/google';
-
 const spicyRice = Spicy_Rice({
   weight: '400',
   subsets: ['latin'],
@@ -19,8 +15,9 @@ const spicyRice = Spicy_Rice({
   display: 'swap',
 });
 
-const zenDots = localFont({
-  src: '../fonts/ZenDots-Regular.ttf',
+const zenDots = Zen_Dots({
+  weight: '400',
+  subsets: ['latin'],
   variable: '--font-zen-dots',
   display: 'swap',
 });
