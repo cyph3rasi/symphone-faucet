@@ -4,6 +4,7 @@ import { FAUCET_ADDRESS } from '../constants';
 
 interface Particle {
   id: number;
+  text: string;
   style: React.CSSProperties;
 }
 
@@ -14,13 +15,16 @@ export const FaucetBalance: React.FC = () => {
 
   useEffect(() => {
     setIsClient(true);
-    const newParticles = Array.from({ length: 20 }, (_, i) => ({
+    const pepeEmojis = ['🐸', '💚', '🎮', '🎯', '🎪'];
+    const newParticles = Array.from({ length: 15 }, (_, i) => ({
       id: i,
+      text: pepeEmojis[Math.floor(Math.random() * pepeEmojis.length)],
       style: {
         left: `${Math.random() * 100}%`,
         top: `${Math.random() * 100}%`,
         animationDelay: `${Math.random() * 5}s`,
-        animationDuration: `${5 + Math.random() * 5}s`
+        animationDuration: `${8 + Math.random() * 7}s`,
+        fontSize: `${Math.random() * 10 + 15}px`
       }
     }));
     setParticles(newParticles);
@@ -32,52 +36,62 @@ export const FaucetBalance: React.FC = () => {
   };
 
   return (
-    <div className="relative overflow-hidden bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg rounded-3xl border border-purple-500/20 py-4 px-4 sm:px-6">
-      {/* Cosmic aurora background effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-pink-800/30 to-purple-900/30 animate-pulse" />
+    <div className="relative overflow-hidden bg-black/40 backdrop-filter backdrop-blur-lg rounded-3xl border border-green-500/30 py-6 px-6">
+      {/* Background glow effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-lime-800/30 to-green-900/30 animate-pulse" />
       
-      {/* Enhanced floating particles */}
+      {/* Floating emojis */}
       {isClient && (
         <div className="absolute inset-0 overflow-hidden">
           {particles.map((particle) => (
             <div
               key={particle.id}
-              className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-float"
+              className="absolute animate-float-slow"
               style={particle.style}
-            />
+            >
+              {particle.text}
+            </div>
           ))}
         </div>
       )}
 
       <div className="relative z-10">
-        <div className="flex flex-col items-center space-y-2">
-          <div className="text-sm font-zen-dots text-purple-300/80 text-center">Symphony Token Faucet Balance</div>
+        <div className="flex flex-col items-center space-y-3">
+          <div className="text-xl font-spicy-rice text-green-300/90 text-center">
+            Faucet Balance
+          </div>
           
           {loading ? (
             <div className="animate-pulse flex space-x-2 items-center">
-              <div className="h-8 w-32 bg-purple-700/50 rounded-lg" />
-              <span className="text-purple-300 font-orbitron">SYMPH</span>
+              <div className="h-8 w-32 bg-green-700/50 rounded-lg" />
+              <span className="text-green-300 font-spicy-rice">PEPE</span>
             </div>
           ) : error ? (
-            <p className="text-red-400 font-orbitron text-sm text-center">{error}</p>
+            <p className="text-red-400 font-spicy-rice text-sm text-center">{error}</p>
           ) : (
             <div className="flex flex-wrap items-baseline justify-center gap-2">
-              <span className="text-2xl sm:text-4xl font-bold font-orbitron bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 text-transparent bg-clip-text text-center">
+              <span className="text-3xl sm:text-5xl font-spicy-rice bg-gradient-to-r from-green-400 via-lime-300 to-green-400 text-transparent bg-clip-text text-center tracking-wider">
                 {formatBalance(balance)}
               </span>
-              <span className="text-purple-300 font-orbitron">SYMPH</span>
+              <span className="text-green-300 font-spicy-rice text-2xl">PEPE</span>
             </div>
           )}
           
-          <div className="text-xs text-gray-400/80 font-mono break-all text-center px-2">
+          <div className="text-xs text-green-400/60 font-mono break-all text-center px-2 bg-black/30 py-2 rounded-xl border border-green-500/20">
             {FAUCET_ADDRESS}
           </div>
         </div>
       </div>
 
       {/* Enhanced decorative elements */}
-      <div className="absolute -top-12 -right-12 w-32 h-32 bg-purple-600/10 rounded-full blur-xl animate-pulse" />
-      <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-pink-600/10 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
+      <div className="absolute -top-12 -right-12 w-32 h-32 bg-green-600/10 rounded-full blur-xl animate-pulse" />
+      <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-lime-600/10 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1s' }} />
+      
+      {/* Corner accents */}
+      <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-green-500/30 rounded-tl-lg" />
+      <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-green-500/30 rounded-tr-lg" />
+      <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-green-500/30 rounded-bl-lg" />
+      <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-green-500/30 rounded-br-lg" />
     </div>
   );
 };
