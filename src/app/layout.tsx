@@ -1,12 +1,6 @@
 import type { Metadata } from 'next';
-import { Orbitron, Zen_Dots, Spicy_Rice, Lilita_One } from 'next/font/google';
+import { Spicy_Rice, Unbounded, Inter } from 'next/font/google';
 import './globals.css';
-
-const orbitron = Orbitron({ 
-  subsets: ['latin'],
-  variable: '--font-orbitron',
-  display: 'swap',
-});
 
 const spicyRice = Spicy_Rice({
   weight: '400',
@@ -15,17 +9,15 @@ const spicyRice = Spicy_Rice({
   display: 'swap',
 });
 
-const zenDots = Zen_Dots({
-  weight: '400',
+const unbounded = Unbounded({
   subsets: ['latin'],
-  variable: '--font-zen-dots',
+  variable: '--font-unbounded',
   display: 'swap',
 });
 
-const lilitaOne = Lilita_One({
-  weight: '400',
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-lilita-one',
+  variable: '--font-inter',
   display: 'swap',
 });
 
@@ -40,8 +32,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${orbitron.variable} ${zenDots.variable} ${spicyRice.variable} ${lilitaOne.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={`${unbounded.variable} ${spicyRice.variable} ${inter.variable}`}>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
