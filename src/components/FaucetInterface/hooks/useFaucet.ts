@@ -12,6 +12,7 @@ export const useFaucet = () => {
     try {
       setError('');
       setSuccess('');
+      setShowConfetti(false);
       setLoading(true);
 
       const provider = new ethers.providers.Web3Provider(window.ethereum);
@@ -24,9 +25,11 @@ export const useFaucet = () => {
       setSuccess('Successfully claimed 1000 SYMPH tokens!');
       setShowConfetti(true);
 
+      // Reset confetti after animation
       setTimeout(() => {
         setShowConfetti(false);
       }, 5000);
+
     } catch (err: any) {
       // Check for user rejection
       if (err.code === 'ACTION_REJECTED') {
@@ -42,6 +45,7 @@ export const useFaucet = () => {
   const handleClaimAgain = () => {
     setSuccess('');
     setError('');
+    setShowConfetti(false);
   };
 
   return { loading, error, success, showConfetti, claimTokens, handleClaimAgain };

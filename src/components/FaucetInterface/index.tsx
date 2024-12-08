@@ -32,6 +32,7 @@ const FaucetInterface: React.FC = () => {
             loading={walletLoading || faucetLoading}
             error={walletError || faucetError}
             success={success}
+            showConfetti={showConfetti}
             onConnect={connectWallet}
             onClaim={claimTokens}
             onClaimAgain={handleClaimAgain}
