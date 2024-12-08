@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -9,11 +9,35 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'zen-dots': ['var(--font-zen-dots)', 'sans-serif'],
         'orbitron': ['var(--font-orbitron)', 'sans-serif'],
+        'zen-dots': ['var(--font-zen-dots)', 'cursive'],
+        'spicy-rice': ['var(--font-spicy-rice)', 'cursive'],
+      },
+      animation: {
+        shimmer: 'shimmer 2s infinite',
+        'float-slow': 'float-slow var(--duration) infinite ease-in-out',
+      },
+      keyframes: {
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        'float-slow': {
+          '0%': { 
+            transform: 'translateY(100vh) rotate(0deg) scale(1)',
+            opacity: '0'
+          },
+          '10%': { opacity: '1' },
+          '90%': { opacity: '1' },
+          '100%': {
+            transform: 'translateY(-20vh) rotate(360deg) scale(1.5)',
+            opacity: '0'
+          },
+        },
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+
+export default config;
