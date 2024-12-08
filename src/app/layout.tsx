@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Orbitron } from 'next/font/google';
-import { SpicyRice } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
 
@@ -10,7 +9,10 @@ const orbitron = Orbitron({
   display: 'swap',
 });
 
-const spicyRice = SpicyRice({
+// Import Spicy Rice as a Google Font with proper formatting
+import { Spicy_Rice } from 'next/font/google';
+
+const spicyRice = Spicy_Rice({
   weight: '400',
   subsets: ['latin'],
   variable: '--font-spicy-rice',
