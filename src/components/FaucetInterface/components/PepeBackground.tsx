@@ -9,14 +9,17 @@ export const PepeBackground: React.FC = () => {
     // Clear existing elements
     floatingContainer.innerHTML = '';
 
-    // Text options for floating elements
-    const texts = ['$0', 'FREE'];
+    // Text options and emoji for floating elements
+    const elements = [
+      '$0', 'FREE',
+      '🐸', '💚', '🎮', '🎯', '🎪' // Pepe emojis
+    ];
     
     // Create floating elements
     for (let i = 0; i < 50; i++) {
       const floatingEl = document.createElement('div');
       floatingEl.className = 'floating-text';
-      floatingEl.textContent = texts[Math.floor(Math.random() * texts.length)];
+      floatingEl.textContent = elements[Math.floor(Math.random() * elements.length)];
       
       // Random position
       const left = Math.random() * 100;
@@ -25,7 +28,7 @@ export const PepeBackground: React.FC = () => {
       // Random size (bigger than stars for better visibility)
       const size = Math.random() * 20 + 15;
       
-      // Slower float duration (increased from 8 to 15)
+      // Slower float duration and delay
       const duration = Math.random() * 10 + 15;
       const delay = Math.random() * -20;
       

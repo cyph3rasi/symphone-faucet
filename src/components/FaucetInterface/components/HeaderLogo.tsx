@@ -16,7 +16,7 @@ export const HeaderLogo: React.FC = () => {
           
           {/* Main title */}
           <h1 className="text-6xl font-spicy-rice relative bg-gradient-to-r from-green-400 via-lime-300 to-green-400 text-transparent bg-clip-text pb-2 transform hover:scale-105 transition-transform duration-300">
-            FREEPEPE
+            Free PEPE
           </h1>
           
           {/* Subtitle */}

@@ -2,34 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useFaucetBalance } from '../hooks/useFaucetBalance';
 import { FAUCET_ADDRESS } from '../constants';
 
-interface Particle {
-  id: number;
-  text: string;
-  style: React.CSSProperties;
-}
-
 export const FaucetBalance: React.FC = () => {
   const { balance, loading, error } = useFaucetBalance();
-  const [particles, setParticles] = useState<Particle[]>([]);
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-    const pepeEmojis = ['🐸', '💚', '🎮', '🎯', '🎪'];
-    const newParticles = Array.from({ length: 15 }, (_, i) => ({
-      id: i,
-      text: pepeEmojis[Math.floor(Math.random() * pepeEmojis.length)],
-      style: {
-        left: `${Math.random() * 100}%`,
-        top: `${Math.random() * 100}%`,
-        animationDelay: `${Math.random() * 5}s`,
-        animationDuration: `${8 + Math.random() * 7}s`,
-        fontSize: `${Math.random() * 10 + 15}px`
-      }
-    }));
-    setParticles(newParticles);
-  }, []);
-
+  
   const formatBalance = (balance: string) => {
     const num = parseFloat(balance);
     return num.toLocaleString(undefined, { maximumFractionDigits: 2 });
@@ -39,21 +14,6 @@ export const FaucetBalance: React.FC = () => {
     <div className="relative overflow-hidden bg-black/40 backdrop-filter backdrop-blur-lg rounded-3xl border border-green-500/30 py-6 px-6">
       {/* Background glow effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-green-900/30 via-lime-800/30 to-green-900/30 animate-pulse" />
-      
-      {/* Floating emojis */}
-      {isClient && (
-        <div className="absolute inset-0 overflow-hidden">
-          {particles.map((particle) => (
-            <div
-              key={particle.id}
-              className="absolute animate-float-slow"
-              style={particle.style}
-            >
-              {particle.text}
-            </div>
-          ))}
-        </div>
-      )}
 
       <div className="relative z-10">
         <div className="flex flex-col items-center space-y-3">
@@ -64,7 +24,7 @@ export const FaucetBalance: React.FC = () => {
           {loading ? (
             <div className="animate-pulse flex space-x-2 items-center">
               <div className="h-8 w-32 bg-green-700/50 rounded-lg" />
-              <span className="text-green-300 font-spicy-rice">PEPE</span>
+              <span className="text-green-300 font-spicy-rice">FREEPEPE</span>
             </div>
           ) : error ? (
             <p className="text-red-400 font-spicy-rice text-sm text-center">{error}</p>
@@ -73,7 +33,7 @@ export const FaucetBalance: React.FC = () => {
               <span className="text-3xl sm:text-5xl font-spicy-rice bg-gradient-to-r from-green-400 via-lime-300 to-green-400 text-transparent bg-clip-text text-center tracking-wider">
                 {formatBalance(balance)}
               </span>
-              <span className="text-green-300 font-spicy-rice text-2xl">PEPE</span>
+              <span className="text-green-300 font-spicy-rice text-2xl">FREEPEPE</span>
             </div>
           )}
           
