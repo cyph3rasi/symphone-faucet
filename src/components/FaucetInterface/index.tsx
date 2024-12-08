@@ -7,7 +7,7 @@ import { TokenSetup } from './components/TokenSetup';
 import { AboutToken } from './components/AboutToken';
 import { HeaderLogo } from './components/HeaderLogo';
 import { StarBackground } from './components/StarBackground';
-import '../styles/stars.css';
+import './styles/stars.css';
 
 const FaucetInterface: React.FC = () => {
   const { account, loading: walletLoading, error: walletError, connectWallet } = useWallet();
