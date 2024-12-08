@@ -11,10 +11,6 @@ export const AboutToken: React.FC = () => {
         </p>
 
         <p className="leading-relaxed">
-          What sets the Symphony Token apart is its burnable nature - a portion of the tokens are systematically removed from circulation, reducing the overall supply over time. This deflationary model mirrors the ebb and flow of the cosmos, where elements are continuously consumed and reformed.
-        </p>
-
-        <p className="leading-relaxed">
           Notably, the Symphony Token does not permit any new minting or additional issuance. Its fixed supply stands as an immutable testament to the principles of digital integrity. This unwavering adherence to a closed-loop system is intended to inspire a profound sense of trust within the community.
         </p>
 
