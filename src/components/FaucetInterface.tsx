@@ -134,7 +134,7 @@ const FaucetInterface = () => {
         <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-purple-500/20">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-3 font-['Zen_Dots'] bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
-              Symphone Token Faucet
+              Symphony Token Faucet
             </h1>
             <p className="text-gray-400 font-['Orbitron']">Claim 1000 SYMPH tokens</p>
           </div>
