@@ -14,9 +14,8 @@ export const Instructions = () => (
       </div>
     </div>
 
-    {/* Video Tutorial Section */}
+    {/* Video Section */}
     <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20">
-      <h2 className="text-xl font-bold mb-4 font-zen-dots text-purple-300">Video Tutorial</h2>
       <div className="overflow-hidden rounded-xl shadow-xl bg-black/20">
         <div className="relative w-full pt-[56.25%]">
           <iframe
@@ -28,9 +27,6 @@ export const Instructions = () => (
           />
         </div>
       </div>
-      <p className="text-sm text-purple-300/80 mt-4 text-center italic">
-        Watch our comprehensive guide on claiming and managing your Symphony tokens
-      </p>
     </div>
   </div>
 );
