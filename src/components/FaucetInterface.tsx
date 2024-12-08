@@ -17,6 +17,7 @@ const FAUCET_ABI = [
 ];
 
 const FaucetInterface = () => {
+  const [showConfetti, setShowConfetti] = useState(false);  // Add this line
   // ... previous state and constants ...
 
   return (
