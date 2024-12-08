@@ -2,7 +2,7 @@ import React from 'react';
 import { TOKEN_ADDRESS } from '../constants';
 
 export const TokenSetup = () => (
-  <div className="lg:col-span-3 order-2 lg:order-3">
+  <div className="lg:col-span-3 order-2 lg:order-3" key="token-setup-v2">
     <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20 h-full">
       <h2 className="text-xl font-bold mb-4 font-zen-dots text-purple-300">View Tokens in MetaMask</h2>
       <div className="space-y-4 text-sm text-gray-300">
