@@ -9,10 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'orbitron': ['var(--font-orbitron)', 'sans-serif'],
-        'zen-dots': ['var(--font-zen-dots)', 'cursive'],
         'spicy-rice': ['var(--font-spicy-rice)', 'cursive'],
-        'lilita-one': ['var(--font-lilita-one)', 'cursive'],
+        'unbounded': ['var(--font-unbounded)', 'sans-serif'],
+        'inter': ['var(--font-inter)', 'sans-serif'],
       },
       animation: {
         shimmer: 'shimmer 2s infinite',
