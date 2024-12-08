@@ -5,6 +5,7 @@ import { ClaimInterface } from './components/ClaimInterface';
 import { Instructions } from './components/Instructions';
 import { TokenSetup } from './components/TokenSetup';
 import { AboutToken } from './components/AboutToken';
+import { HeaderLogo } from './components/HeaderLogo';
 
 const FaucetInterface: React.FC = () => {
   const { account, loading: walletLoading, error: walletError, connectWallet } = useWallet();
@@ -18,8 +19,9 @@ const FaucetInterface: React.FC = () => {
   } = useFaucet();
 
   return (
-    <div className="min-h-screen py-12 px-4 relative">
-      <div className="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <div className="min-h-screen py-6 px-4 relative">
+      <HeaderLogo />
+      <div className="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 mt-8">
         {/* Left Column - About Section (3 columns wide) */}
         <div className="order-3 lg:order-1 lg:col-span-3">
           <AboutToken />
