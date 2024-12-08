@@ -4,20 +4,28 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 51;
-  --background-end-rgb: 26, 0, 51;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-    to bottom,
-    rgb(var(--background-start-rgb)),
-    rgb(var(--background-end-rgb))
-  );
-  font-family: 'Orbitron', sans-serif;
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
 
-h1, h2, h3 {
-  font-family: 'Zen Dots', sans-serif;
+.font-zen-dots {
+  font-family: var(--font-zen-dots);
+}
+
+.font-orbitron {
+  font-family: var(--font-orbitron);
+}
+
+.font-electrolize {
+  font-family: var(--font-electrolize);
 }

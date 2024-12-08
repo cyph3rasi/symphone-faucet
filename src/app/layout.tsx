@@ -1,16 +1,23 @@
 import type { Metadata } from 'next'
-import { Electrolize, Playfair_Display } from 'next/font/google'
+import { Electrolize, Zen_Dots, Orbitron } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 
 const electrolize = Electrolize({ 
   weight: '400',
   subsets: ['latin'],
+  variable: '--font-electrolize',
 })
 
-const playfair = Playfair_Display({
+const zenDots = Zen_Dots({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-zen-dots',
+})
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  variable: '--font-orbitron',
 })
 
 export const metadata: Metadata = {
@@ -24,7 +31,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playfair.variable}`}>
+    <html lang="en" className={`${zenDots.variable} ${orbitron.variable} ${electrolize.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body className={`${electrolize.className} min-h-screen bg-gradient-to-br from-purple-900 to-blue-900`}>
         <nav className="fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
