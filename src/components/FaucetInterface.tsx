@@ -18,6 +18,7 @@ const FaucetInterface = () => {
   const FAUCET_ADDRESS = '0x4569EE4D758f4c453f89AeCf18D842FEe0490f4E';
 
   useEffect(() => {
+    // Star animation code remains the same
     const starsContainer = document.createElement('div');
     starsContainer.className = 'stars-container';
     document.body.prepend(starsContainer);
@@ -131,6 +132,7 @@ const FaucetInterface = () => {
   return (
     <div className="min-h-screen flex items-center justify-center py-12 px-4 relative">
       <div className="max-w-xl w-full space-y-8">
+        {/* Main Faucet Card */}
         <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-purple-500/20">
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-3 font-['Zen_Dots'] bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
@@ -199,6 +201,18 @@ const FaucetInterface = () => {
                 </button>
               </div>
             )}
+          </div>
+        </div>
+
+        {/* Instructions Card */}
+        <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20">
+          <h2 className="text-xl font-bold mb-4 font-['Zen_Dots'] text-purple-300">Instructions</h2>
+          <div className="space-y-3 font-['Orbitron'] text-sm text-gray-300">
+            <p>1. Connect your MetaMask wallet to get started</p>
+            <p>2. Make sure you have a small amount of AVAX in your wallet for gas fees (less than $0.20 per claim)</p>
+            <p>3. If not already connected, you'll be prompted to switch to the Avalanche C-Chain network</p>
+            <p>4. Click 'Claim Tokens' to receive 1000 Symphony tokens</p>
+            <p className="text-purple-300 mt-4">Note: You'll need to confirm the transaction in MetaMask and pay a small gas fee in AVAX (typically under $0.20)</p>
           </div>
         </div>
       </div>
