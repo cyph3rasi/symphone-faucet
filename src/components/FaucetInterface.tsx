@@ -135,24 +135,24 @@ const FaucetInterface = () => {
         {/* Main Faucet Card */}
         <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-purple-500/20">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-3 font-['Zen_Dots'] bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
+            <h1 className="text-4xl font-bold mb-3 font-zen-dots bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
               Symphony Token Faucet
             </h1>
-            <p className="text-gray-400 font-['Orbitron']">Claim 1000 SYMPH tokens</p>
+            <p className="text-gray-400 font-orbitron">Claim 1000 SYMPH tokens</p>
           </div>
 
           <div className="space-y-6">
             {!account ? (
               <button 
                 onClick={connectWallet}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-['Orbitron']"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron"
               >
                 Connect Wallet
               </button>
             ) : (
               <div className="space-y-4">
                 <div className="bg-gray-700/50 backdrop-blur rounded-xl p-4 border border-purple-500/20">
-                  <p className="text-sm text-gray-300 mb-1 font-['Orbitron']">Connected Wallet</p>
+                  <p className="text-sm text-gray-300 mb-1 font-orbitron">Connected Wallet</p>
                   <p className="font-mono text-sm truncate text-purple-300">{account}</p>
                 </div>
 
@@ -160,7 +160,7 @@ const FaucetInterface = () => {
                   <button
                     onClick={claimTokens}
                     disabled={loading}
-                    className={`w-full py-3 px-4 rounded-xl font-bold transition-all transform hover:scale-[1.01] active:scale-[0.99] font-['Orbitron'] ${
+                    className={`w-full py-3 px-4 rounded-xl font-bold transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron ${
                       loading
                         ? 'bg-gray-600 cursor-not-allowed'
                         : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500'
@@ -183,19 +183,19 @@ const FaucetInterface = () => {
             )}
 
             {error && (
-              <div className="bg-red-900/50 backdrop-blur border border-red-500/20 text-white p-4 rounded-xl font-['Orbitron']">
+              <div className="bg-red-900/50 backdrop-blur border border-red-500/20 text-white p-4 rounded-xl font-orbitron">
                 {error}
               </div>
             )}
 
             {success && (
               <div className="space-y-4">
-                <div className="bg-green-900/50 backdrop-blur border border-green-500/20 text-white p-4 rounded-xl font-['Orbitron']">
+                <div className="bg-green-900/50 backdrop-blur border border-green-500/20 text-white p-4 rounded-xl font-orbitron">
                   {success}
                 </div>
                 <button
                   onClick={handleClaimAgain}
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-['Orbitron']"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron"
                 >
                   Claim Again
                 </button>
@@ -206,8 +206,8 @@ const FaucetInterface = () => {
 
         {/* Instructions Card */}
         <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20">
-          <h2 className="text-xl font-bold mb-4 font-['Zen_Dots'] text-purple-300">Instructions</h2>
-          <div className="space-y-3 font-['Orbitron'] text-sm text-gray-300">
+          <h2 className="text-xl font-bold mb-4 font-zen-dots text-purple-300">Instructions</h2>
+          <div className="space-y-3 font-orbitron text-sm text-gray-300">
             <p>1. Connect your MetaMask wallet to get started</p>
             <p>2. Make sure you have a small amount of AVAX in your wallet for gas fees (less than $0.20 per claim)</p>
             <p>3. If not already connected, you'll be prompted to switch to the Avalanche C-Chain network</p>
