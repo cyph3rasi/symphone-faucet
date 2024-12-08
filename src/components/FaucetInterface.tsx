@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
+import '../styles/stars.css';
 
 const FAUCET_ABI = [
     "function send() external",
@@ -15,6 +16,41 @@ const FaucetInterface = () => {
   const [success, setSuccess] = useState('');
 
   const FAUCET_ADDRESS = '0x4569EE4D758f4c453f89AeCf18D842FEe0490f4E';
+
+  useEffect(() => {
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars-container';
+    document.body.prepend(starsContainer);
+
+    const backgroundDiv = document.createElement('div');
+    backgroundDiv.className = 'stars-background';
+    document.body.prepend(backgroundDiv);
+
+    for (let i = 0; i < 150; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      
+      const left = Math.random() * 100;
+      const top = Math.random() * 100;
+      const size = Math.random() * 1.5 + 0.5;
+      const duration = Math.random() * 5 + 3;
+      
+      star.style.cssText = `
+        left: ${left}%;
+        top: ${top}%;
+        width: ${size}px;
+        height: ${size}px;
+        --duration: ${duration}s;
+      `;
+      
+      starsContainer.appendChild(star);
+    }
+
+    return () => {
+      document.body.removeChild(starsContainer);
+      document.body.removeChild(backgroundDiv);
+    };
+  }, []);
 
   const connectWallet = async () => {
     try {
@@ -93,28 +129,28 @@ const FaucetInterface = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-gray-900 to-black text-white py-12 px-4">
-      <div className="max-w-xl mx-auto">
-        <div className="bg-gray-800/50 backdrop-blur-xl border border-purple-500/20 p-8 rounded-2xl shadow-2xl">
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 relative">
+      <div className="max-w-xl w-full space-y-8">
+        <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-purple-500/20">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-3 bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
+            <h1 className="text-4xl font-bold mb-3 font-['Zen_Dots'] bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
               Symphone Token Faucet
             </h1>
-            <p className="text-gray-400 text-lg">Claim 1000 SYMPH tokens</p>
+            <p className="text-gray-400 font-['Orbitron']">Claim 1000 SYMPH tokens</p>
           </div>
 
           <div className="space-y-6">
             {!account ? (
               <button 
                 onClick={connectWallet}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99]"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-['Orbitron']"
               >
                 Connect Wallet
               </button>
             ) : (
               <div className="space-y-4">
                 <div className="bg-gray-700/50 backdrop-blur rounded-xl p-4 border border-purple-500/20">
-                  <p className="text-sm text-gray-300 mb-1">Connected Wallet</p>
+                  <p className="text-sm text-gray-300 mb-1 font-['Orbitron']">Connected Wallet</p>
                   <p className="font-mono text-sm truncate text-purple-300">{account}</p>
                 </div>
 
@@ -122,7 +158,7 @@ const FaucetInterface = () => {
                   <button
                     onClick={claimTokens}
                     disabled={loading}
-                    className={`w-full py-3 px-4 rounded-xl font-bold transition-all transform hover:scale-[1.01] active:scale-[0.99] ${
+                    className={`w-full py-3 px-4 rounded-xl font-bold transition-all transform hover:scale-[1.01] active:scale-[0.99] font-['Orbitron'] ${
                       loading
                         ? 'bg-gray-600 cursor-not-allowed'
                         : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500'
@@ -145,19 +181,19 @@ const FaucetInterface = () => {
             )}
 
             {error && (
-              <div className="bg-red-900/50 backdrop-blur border border-red-500/20 text-white p-4 rounded-xl">
+              <div className="bg-red-900/50 backdrop-blur border border-red-500/20 text-white p-4 rounded-xl font-['Orbitron']">
                 {error}
               </div>
             )}
 
             {success && (
               <div className="space-y-4">
-                <div className="bg-green-900/50 backdrop-blur border border-green-500/20 text-white p-4 rounded-xl">
+                <div className="bg-green-900/50 backdrop-blur border border-green-500/20 text-white p-4 rounded-xl font-['Orbitron']">
                   {success}
                 </div>
                 <button
                   onClick={handleClaimAgain}
-                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99]"
+                  className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-['Orbitron']"
                 >
                   Claim Again
                 </button>
