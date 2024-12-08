@@ -1,16 +1,19 @@
 import React from 'react';
 import { ClaimInterfaceProps } from '../types';
+import { Confetti } from './Confetti';
 
 export const ClaimInterface: React.FC<ClaimInterfaceProps> = ({
   account,
   loading,
   error,
   success,
+  showConfetti,
   onConnect,
   onClaim,
   onClaimAgain
 }) => (
   <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
+    <Confetti active={showConfetti} />
     <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-purple-500/20">
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-3 font-zen-dots bg-gradient-to-r from-purple-400 to-pink-300 text-transparent bg-clip-text">
