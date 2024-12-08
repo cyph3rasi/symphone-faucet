@@ -1,60 +1,41 @@
-import type { Metadata } from 'next'
-import { Electrolize, Zen_Dots, Orbitron } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from 'next';
+import { Orbitron } from 'next/font/google';
+import { SpicyRice } from 'next/font/google';
+import localFont from 'next/font/local';
+import './globals.css';
 
-const electrolize = Electrolize({ 
-  weight: '400',
-  subsets: ['latin'],
-})
-
-const zenDots = Zen_Dots({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-zen-dots',
-})
-
-const orbitron = Orbitron({
+const orbitron = Orbitron({ 
   subsets: ['latin'],
   variable: '--font-orbitron',
-})
+  display: 'swap',
+});
+
+const spicyRice = SpicyRice({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-spicy-rice',
+  display: 'swap',
+});
+
+const zenDots = localFont({
+  src: '../fonts/ZenDots-Regular.ttf',
+  variable: '--font-zen-dots',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  title: 'Symphony Token Faucet',
-  description: 'Claim your Symphony Tokens',
-  icons: {
-    icon: 'https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/thunder.png'
-  }
-}
+  title: 'FREEPEPE Token Faucet',
+  description: 'Claim your FREE PEPE tokens on Avalanche C-Chain',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${zenDots.variable} ${orbitron.variable}`}>
-      <head>
-        <link rel="icon" href="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/thunder.png" />
-      </head>
-      <body className={`${electrolize.className} relative min-h-screen`}>
-        {/* Fixed background with overlay */}
-        <div className="fixed inset-0 w-full h-full z-0 overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-[length:200%] md:bg-cover bg-center bg-fixed select-none pointer-events-none"
-            style={{
-              backgroundImage: `url('https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/backgrounds/nebula.jpg')`,
-              transform: 'scale(1.1)',
-              willChange: 'transform',
-            }}
-          />
-          <div className="absolute inset-0 bg-black/70" />
-        </div>
-
-        {/* Main content */}
-        <main className="relative z-10">
-          {children}
-        </main>
-      </body>
+    <html lang="en" className={`${orbitron.variable} ${zenDots.variable} ${spicyRice.variable}`}>
+      <body>{children}</body>
     </html>
   );
 }
