@@ -11,7 +11,7 @@ export const HeaderLogo: React.FC = () => {
           {/* PEPE Logo */}
           <div className="w-32 animate-title-float">
             <Image
-              src="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/0.png"
+              src="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/pepetoken.png"
               alt="PEPE Logo"
               width={200}
               height={200}
@@ -41,7 +41,7 @@ export const HeaderLogo: React.FC = () => {
           {/* PEPE Logo */}
           <div className="relative w-32 md:w-40 lg:w-44 mr-4 md:mr-6 lg:mr-8 animate-title-float">
             <Image
-              src="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/0.png"
+              src="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/pepetoken.png"
               alt="PEPE Logo"
               width={200}
               height={200}
