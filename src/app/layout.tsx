@@ -6,7 +6,6 @@ import Link from 'next/link'
 const electrolize = Electrolize({ 
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-electrolize',
 })
 
 const zenDots = Zen_Dots({
@@ -31,19 +30,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${zenDots.variable} ${orbitron.variable} ${electrolize.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
-      <body className={`${electrolize.className} min-h-screen bg-gradient-to-br from-purple-900 to-blue-900`}>
+    <html lang="en" className={`${zenDots.variable} ${orbitron.variable}`}>
+      <body className={electrolize.className}>
         <nav className="fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
               <div className="flex items-center">
                 <Link 
                   href="https://fallenones.xyz" 
-                  className="text-white hover:text-gray-300 transition-colors duration-200"
+                  className="text-white hover:text-gray-300 transition-colors duration-200 font-electrolize"
                 >
                   Home
                 </Link>
