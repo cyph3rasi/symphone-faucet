@@ -5,8 +5,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Symphone Token Faucet',
-  description: 'Claim your Symphone Tokens',
+  title: 'Symphony Token Faucet',
+  description: 'Claim your Symphony Tokens',
 }
 
 export default function RootLayout({
