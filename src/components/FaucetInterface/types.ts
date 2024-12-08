@@ -19,6 +19,7 @@ export interface ClaimInterfaceProps {
   loading: boolean;
   error: string;
   success: string;
+  showConfetti: boolean;
   onConnect: () => Promise<void>;
   onClaim: () => Promise<void>;
   onClaimAgain: () => void;
