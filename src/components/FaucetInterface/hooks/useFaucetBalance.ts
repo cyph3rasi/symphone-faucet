@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ethers } from 'ethers';
-import { FAUCET_ADDRESS, FAUCET_ABI } from '../constants';
+import { TOKEN_ADDRESS, TOKEN_ABI, FAUCET_ADDRESS } from '../constants';
 
 export const useFaucetBalance = () => {
   const [balance, setBalance] = useState<string>('0');
@@ -12,8 +12,8 @@ export const useFaucetBalance = () => {
       try {
         if (typeof window.ethereum !== 'undefined') {
           const provider = new ethers.providers.Web3Provider(window.ethereum);
-          const contract = new ethers.Contract(FAUCET_ADDRESS, FAUCET_ABI, provider);
-          const balance = await contract.getBalance();
+          const tokenContract = new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, provider);
+          const balance = await tokenContract.balanceOf(FAUCET_ADDRESS);
           setBalance(ethers.utils.formatUnits(balance, 18));
           setError(null);
         }
@@ -26,7 +26,7 @@ export const useFaucetBalance = () => {
     };
 
     fetchBalance();
-    const interval = setInterval(fetchBalance, 30000); // Update every 30 seconds
+    const interval = setInterval(fetchBalance, 30000);
 
     return () => clearInterval(interval);
   }, []);
