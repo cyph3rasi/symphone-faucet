@@ -1,15 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { FaucetBalance } from './FaucetBalance';
 
 export const HeaderLogo: React.FC = () => {
   return (
     <div className="w-full flex flex-col items-center py-4 space-y-4">
-      <Link 
-        href="https://fallenones.xyz" 
-        className="group relative inline-flex flex-col items-center text-center"
-      >
+      <div className="group relative inline-flex flex-col items-center text-center">
         <div className="flex items-center">
           {/* PEPE Logo */}
           <div className="relative w-32 md:w-40 lg:w-44 mr-4 md:mr-6 lg:mr-8 animate-title-float">
@@ -44,7 +40,7 @@ export const HeaderLogo: React.FC = () => {
         <div className="mt-2 -mb-4">
           <FaucetBalance />
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

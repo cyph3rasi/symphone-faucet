@@ -13,5 +13,5 @@ export const Instructions = () => (
         <p className="text-green-300 mt-4">Note: You'll need to confirm the transaction in MetaMask and pay a small gas fee in AVAX (typically under $0.20)</p>
       </div>
     </div>
-    </div>
+  </div>
 );
