@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Electrolize, Zen_Dots, Orbitron } from 'next/font/google'
 import './globals.css'
-import Link from 'next/link'
 
 const electrolize = Electrolize({ 
   weight: '400',
@@ -49,24 +48,8 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-black/60" />
         </div>
 
-        {/* Navigation */}
-        <nav className="fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm z-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-between h-16">
-              <div className="flex items-center">
-                <Link 
-                  href="https://fallenones.xyz" 
-                  className="text-white hover:text-gray-300 transition-colors duration-200 font-electrolize"
-                >
-                  Home
-                </Link>
-              </div>
-            </div>
-          </div>
-        </nav>
-
         {/* Main content */}
-        <main className="pt-16 relative z-10">
+        <main className="relative z-10">
           {children}
         </main>
       </body>
