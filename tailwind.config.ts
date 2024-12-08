@@ -9,9 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        'zen-dots': ['var(--font-zen-dots)'],
-        'orbitron': ['var(--font-orbitron)'],
-        'electrolize': ['var(--font-electrolize)'],
+        'zen-dots': ['var(--font-zen-dots)', 'sans-serif'],
+        'orbitron': ['var(--font-orbitron)', 'sans-serif'],
       },
     },
   },
