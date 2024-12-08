@@ -22,7 +22,7 @@ export const useFaucet = () => {
       const tx = await faucet.send();
       await tx.wait();
 
-      setSuccess('Successfully claimed 1000 SYMPH tokens!');
+      setSuccess('Successfully claimed 3.333 FREEPEPE tokens!');
       setShowConfetti(true);
 
       setTimeout(() => {
