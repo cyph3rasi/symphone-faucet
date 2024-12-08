@@ -1,6 +1,7 @@
 import React from 'react';
 import { ClaimInterfaceProps } from '../types';
 import { Confetti } from './Confetti';
+import { FaucetBalance } from './FaucetBalance';
 
 export const ClaimInterface: React.FC<ClaimInterfaceProps> = ({
   account,
@@ -21,6 +22,8 @@ export const ClaimInterface: React.FC<ClaimInterfaceProps> = ({
         </h1>
         <p className="text-gray-400 font-orbitron">Claim 1000 SYMPH tokens</p>
       </div>
+
+      <FaucetBalance />
 
       <div className="space-y-6">
         {!account ? (
