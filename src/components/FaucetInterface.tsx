@@ -99,7 +99,11 @@ const FaucetInterface = () => {
       setAccount(accounts[0]);
 
     } catch (err) {
-      setError(err.message);
+      if (err.code === 4001) {
+        setError('Please connect your wallet to continue.');
+      } else {
+        setError(err.message);
+      }
     }
   };
 
@@ -118,7 +122,13 @@ const FaucetInterface = () => {
 
       setSuccess('Successfully claimed 1000 SYMPH tokens!');
     } catch (err) {
-      setError(err.message);
+      // Check for transaction rejection
+      if (err.code === 'ACTION_REJECTED' || 
+          (err.message && err.message.includes('user rejected transaction'))) {
+        setError('Transaction was canceled.');
+      } else {
+        setError(err.message);
+      }
     } finally {
       setLoading(false);
     }
