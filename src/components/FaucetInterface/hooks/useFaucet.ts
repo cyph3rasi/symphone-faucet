@@ -25,17 +25,23 @@ export const useFaucet = () => {
       setSuccess('Successfully claimed 1000 SYMPH tokens!');
       setShowConfetti(true);
 
-      // Reset confetti after animation
       setTimeout(() => {
         setShowConfetti(false);
       }, 5000);
 
     } catch (err: any) {
-      // Check for user rejection
       if (err.code === 'ACTION_REJECTED') {
         setError('Transaction canceled by user.');
+      } else if (err.message && err.message.includes('Try again later')) {
+        setError('Please wait before claiming tokens again. Each address can only claim once every 24 hours.');
+      } else if (err.code === 'UNPREDICTABLE_GAS_LIMIT' && err.error?.data?.message) {
+        if (err.error.data.message.includes('Try again later')) {
+          setError('Please wait before claiming tokens again. Each address can only claim once every 24 hours.');
+        } else {
+          setError('Transaction failed. Please try again.');
+        }
       } else {
-        setError(err.message || 'Failed to claim tokens');
+        setError('Failed to claim tokens. Please ensure you have enough AVAX for gas fees and try again.');
       }
     } finally {
       setLoading(false);
