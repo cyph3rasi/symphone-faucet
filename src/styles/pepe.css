@@ -54,49 +54,6 @@
     }
 }
 
-/* Animation for emoji particles */
-@keyframes float-slow {
-    0% {
-        transform: translateY(100vh) rotate(0deg) scale(1);
-        opacity: 0;
-    }
-    10% {
-        opacity: 1;
-    }
-    90% {
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-20vh) rotate(360deg) scale(1.5);
-        opacity: 0;
-    }
-}
-
-/* Shimmer animation */
-@keyframes shimmer {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(100%);
-    }
-}
-
-.animate-shimmer {
-    animation: shimmer 2s infinite;
-}
-
-.animate-float-slow {
-    animation: float-slow var(--duration) infinite ease-in-out;
-}
-
-/* Font imports */
-@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
-
-.font-spicy-rice {
-    font-family: 'Spicy Rice', cursive;
-}
-
 /* Ensure content stays above background */
 .content-wrapper {
     position: relative;
