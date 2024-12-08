@@ -1,5 +1,5 @@
 'use client';
-import { FaucetInterface } from '../components/FaucetInterface';
+import FaucetInterface from '../components/FaucetInterface';
 
 export default function Home() {
   return (
