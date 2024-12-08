@@ -6,8 +6,8 @@ import { Instructions } from './components/Instructions';
 import { TokenSetup } from './components/TokenSetup';
 import { AboutToken } from './components/AboutToken';
 import { HeaderLogo } from './components/HeaderLogo';
-import { StarBackground } from './components/StarBackground';
-import './styles/stars.css';
+import { PepeBackground } from './components/PepeBackground';
+import '../styles/pepe.css';
 
 const FaucetInterface: React.FC = () => {
   const { account, loading: walletLoading, error: walletError, connectWallet } = useWallet();
@@ -22,38 +22,38 @@ const FaucetInterface: React.FC = () => {
 
   return (
     <div className="min-h-screen py-6 px-4 relative">
-      <StarBackground />
+      <PepeBackground />
       <div className="content-wrapper">
         <HeaderLogo />
         <div className="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 mt-8">
-          {/* Left Column - About Section (3 columns wide) */}
+          {/* Left Column - About Section */}
           <div className="order-3 lg:order-1 lg:col-span-3">
             <AboutToken />
           </div>
 
-          {/* Middle Column - Main Interface and Instructions (6 columns wide) */}
+          {/* Middle Column - Main Interface and Instructions */}
           <div className="order-1 lg:order-2 lg:col-span-6 space-y-6">
-            <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-purple-500/20">
+            <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-green-500/20">
               <div className="text-center mb-8">
-                <h2 className="text-4xl font-bold mb-3 font-zen-dots bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 text-transparent bg-clip-text">
-                  Symphony Token Fountain
+                <h2 className="text-4xl font-bold mb-3 font-zen-dots bg-gradient-to-r from-green-400 via-lime-300 to-green-400 text-transparent bg-clip-text">
+                  FREEPEPE Token Faucet
                 </h2>
-                <p className="text-gray-400 font-orbitron">Claim 1000 SYMPH tokens</p>
+                <p className="text-gray-200 font-orbitron">Claim your FREE PEPE tokens</p>
               </div>
 
               <div className="space-y-6">
                 {!account ? (
                   <button 
                     onClick={connectWallet}
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron"
+                    className="w-full bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron"
                   >
                     Connect Wallet
                   </button>
                 ) : (
                   <div className="space-y-4">
-                    <div className="bg-gray-700/50 backdrop-blur rounded-xl p-4 border border-purple-500/20">
+                    <div className="bg-gray-800/50 backdrop-blur rounded-xl p-4 border border-green-500/20">
                       <p className="text-sm text-gray-300 mb-1 font-orbitron">Connected Wallet</p>
-                      <p className="font-mono text-sm truncate text-purple-300">{account}</p>
+                      <p className="font-mono text-sm truncate text-green-300">{account}</p>
                     </div>
 
                     {!success && (
@@ -63,7 +63,7 @@ const FaucetInterface: React.FC = () => {
                         className={`w-full py-3 px-4 rounded-xl font-bold transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron ${
                           faucetLoading
                             ? 'bg-gray-600 cursor-not-allowed'
-                            : 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500'
+                            : 'bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400'
                         } text-white`}
                       >
                         {faucetLoading ? (
@@ -75,7 +75,7 @@ const FaucetInterface: React.FC = () => {
                             Claiming...
                           </span>
                         ) : (
-                          'Claim Tokens'
+                          'Claim FREE Tokens'
                         )}
                       </button>
                     )}
@@ -95,7 +95,7 @@ const FaucetInterface: React.FC = () => {
                     </div>
                     <button
                       onClick={handleClaimAgain}
-                      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron"
+                      className="w-full bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-orbitron"
                     >
                       Claim Again
                     </button>
@@ -106,7 +106,7 @@ const FaucetInterface: React.FC = () => {
             <Instructions />
           </div>
 
-          {/* Right Column - Token Setup (3 columns wide) */}
+          {/* Right Column - Token Setup */}
           <div className="order-2 lg:order-3 lg:col-span-3">
             <TokenSetup key={`token-setup-container-${Date.now()}`} />
           </div>
