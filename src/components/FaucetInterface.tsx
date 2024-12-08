@@ -9,6 +9,8 @@ declare global {
   }
 }
 
+const TOKEN_ADDRESS = "YOUR_TOKEN_ADDRESS"; // Replace with your actual token address
+
 const FAUCET_ABI = [
     "function send() external",
     "function withdrawTokens(address _receiver, uint256 _amount) external",
@@ -17,15 +19,64 @@ const FAUCET_ABI = [
 ];
 
 const FaucetInterface = () => {
-  const [showConfetti, setShowConfetti] = useState(false);  // Add this line
-  // ... previous state and constants ...
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [isTransactionPending, setIsTransactionPending] = useState(false);
+
+  const handleTransaction = async () => {
+    if (!window.ethereum) {
+      alert('Please install MetaMask!');
+      return;
+    }
+
+    try {
+      setIsTransactionPending(true);
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      
+      // Replace with your actual faucet contract address
+      const faucetContract = new ethers.Contract('YOUR_FAUCET_ADDRESS', FAUCET_ABI, signer);
+      
+      const tx = await faucetContract.send();
+      await tx.wait();
+      
+      // Show confetti on success
+      setShowConfetti(true);
+      
+      // Hide confetti after 5 seconds
+      setTimeout(() => {
+        setShowConfetti(false);
+      }, 5000);
+      
+    } catch (error) {
+      console.error('Transaction failed:', error);
+      alert('Transaction failed. Please try again.');
+    } finally {
+      setIsTransactionPending(false);
+    }
+  };
 
   return (
     <>
       {showConfetti && <Confetti />}
       <div className="min-h-screen py-12 px-4 relative">
         <div className="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* Left Sidebar and Main Content sections remain the same ... */}
+          
+          {/* Main Content */}
+          <div className="lg:col-span-6 lg:order-2">
+            <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20">
+              <h1 className="text-2xl font-bold mb-6 font-zen-dots text-purple-300">Symphony Token Faucet</h1>
+              
+              <button
+                onClick={handleTransaction}
+                disabled={isTransactionPending}
+                className="w-full py-3 px-6 bg-gradient-to-r from-purple-600 to-blue-500 text-white font-bold rounded-xl 
+                          hover:from-purple-700 hover:to-blue-600 transition duration-300 ease-in-out transform hover:scale-105
+                          disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {isTransactionPending ? 'Transaction Pending...' : 'Request Tokens'}
+              </button>
+            </div>
+          </div>
 
           {/* Right Sidebar - MetaMask Setup */}
           <div className="lg:col-span-3 order-2 lg:order-3">
