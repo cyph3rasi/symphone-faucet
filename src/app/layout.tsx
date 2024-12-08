@@ -37,16 +37,16 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/thunder.png" />
       </head>
-      <body className={electrolize.className}>
+      <body className={`${electrolize.className} relative min-h-screen`}>
         {/* Fixed background with overlay */}
         <div className="fixed inset-0 w-full h-full z-0">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/path/to/your/image.jpg')`,
+              backgroundImage: `url('https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/background.jpg')`
             }}
           />
-          <div className="absolute inset-0 bg-black/60" /> {/* 60% dark overlay */}
+          <div className="absolute inset-0 bg-black/60" />
         </div>
 
         {/* Navigation */}
