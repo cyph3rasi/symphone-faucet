@@ -12,6 +12,7 @@ const config: Config = {
         'orbitron': ['var(--font-orbitron)', 'sans-serif'],
         'zen-dots': ['var(--font-zen-dots)', 'cursive'],
         'spicy-rice': ['var(--font-spicy-rice)', 'cursive'],
+        'lilita-one': ['var(--font-lilita-one)', 'cursive'],
       },
       animation: {
         shimmer: 'shimmer 2s infinite',
