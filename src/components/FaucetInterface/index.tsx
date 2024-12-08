@@ -33,7 +33,7 @@ const FaucetInterface: React.FC = () => {
 
           {/* Middle Column - Main Interface and Instructions */}
           <div className="order-1 lg:order-2 lg:col-span-6 space-y-6">
-            <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-green-500/20">
+            <div className="bg-black/30 backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-green-500/20">
               <div className="text-center mb-8">
                 <h2 className="text-4xl font-bold mb-3 font-zen-dots bg-gradient-to-r from-green-400 via-lime-300 to-green-400 text-transparent bg-clip-text">
                   FREEPEPE Token Faucet
@@ -51,7 +51,7 @@ const FaucetInterface: React.FC = () => {
                   </button>
                 ) : (
                   <div className="space-y-4">
-                    <div className="bg-gray-800/50 backdrop-blur rounded-xl p-4 border border-green-500/20">
+                    <div className="bg-black/40 backdrop-blur rounded-xl p-4 border border-green-500/20">
                       <p className="text-sm text-gray-300 mb-1 font-orbitron">Connected Wallet</p>
                       <p className="font-mono text-sm truncate text-green-300">{account}</p>
                     </div>

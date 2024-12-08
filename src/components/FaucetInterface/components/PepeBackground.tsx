@@ -25,9 +25,9 @@ export const PepeBackground: React.FC = () => {
       // Random size (bigger than stars for better visibility)
       const size = Math.random() * 20 + 15;
       
-      // Random float duration and delay
-      const duration = Math.random() * 8 + 5;
-      const delay = Math.random() * -10;
+      // Slower float duration (increased from 8 to 15)
+      const duration = Math.random() * 10 + 15;
+      const delay = Math.random() * -20;
       
       floatingEl.style.cssText = `
         left: ${left}%;
