@@ -35,24 +35,24 @@ const FaucetInterface: React.FC = () => {
           <div className="order-1 lg:order-2 lg:col-span-6 space-y-6">
             <div className="bg-black/30 backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-green-500/20">
               <div className="text-center mb-8">
-                <h2 className="text-4xl font-spicy-rice mb-3 bg-gradient-to-r from-green-400 via-lime-300 to-green-400 text-transparent bg-clip-text">
+                <h2 className="text-4xl font-lilita-one mb-3 bg-gradient-to-r from-green-400 via-lime-300 to-green-400 text-transparent bg-clip-text">
                   Free PEPE Faucet
                 </h2>
-                <p className="text-gray-200 font-spicy-rice">Claim your Free PEPE tokens</p>
+                <p className="text-gray-200 font-lilita-one">Claim your Free PEPE tokens</p>
               </div>
 
               <div className="space-y-6">
                 {!account ? (
                   <button 
                     onClick={connectWallet}
-                    className="w-full bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-spicy-rice"
+                    className="w-full bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-lilita-one"
                   >
                     Connect Wallet
                   </button>
                 ) : (
                   <div className="space-y-4">
                     <div className="bg-black/40 backdrop-blur rounded-xl p-4 border border-green-500/20">
-                      <p className="text-sm text-gray-300 mb-1 font-spicy-rice">Connected Wallet</p>
+                      <p className="text-sm text-gray-300 mb-1 font-lilita-one">Connected Wallet</p>
                       <p className="font-mono text-sm truncate text-green-300">{account}</p>
                     </div>
 
@@ -60,7 +60,7 @@ const FaucetInterface: React.FC = () => {
                       <button
                         onClick={claimTokens}
                         disabled={faucetLoading}
-                        className={`w-full py-3 px-4 rounded-xl font-bold transition-all transform hover:scale-[1.01] active:scale-[0.99] font-spicy-rice ${
+                        className={`w-full py-3 px-4 rounded-xl font-bold transition-all transform hover:scale-[1.01] active:scale-[0.99] font-lilita-one ${
                           faucetLoading
                             ? 'bg-gray-600 cursor-not-allowed'
                             : 'bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400'
@@ -83,19 +83,19 @@ const FaucetInterface: React.FC = () => {
                 )}
 
                 {walletError && (
-                  <div className="bg-red-900/50 backdrop-blur border border-red-500/20 text-white p-4 rounded-xl font-spicy-rice">
+                  <div className="bg-red-900/50 backdrop-blur border border-red-500/20 text-white p-4 rounded-xl font-lilita-one">
                     {walletError}
                   </div>
                 )}
 
                 {success && (
                   <div className="space-y-4">
-                    <div className="bg-green-900/30 backdrop-blur border border-green-500/30 text-white p-4 rounded-xl font-spicy-rice animate-pulse">
+                    <div className="bg-green-900/30 backdrop-blur border border-green-500/30 text-white p-4 rounded-xl font-lilita-one animate-pulse">
                       {success}
                     </div>
                     <button
                       onClick={handleClaimAgain}
-                      className="w-full bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-spicy-rice"
+                      className="w-full bg-gradient-to-r from-green-600 to-lime-500 hover:from-green-500 hover:to-lime-400 text-white font-bold py-3 px-4 rounded-xl transition-all transform hover:scale-[1.01] active:scale-[0.99] font-lilita-one"
                     >
                       Claim Again
                     </button>
