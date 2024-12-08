@@ -15,14 +15,16 @@ export const Instructions = () => (
 
     <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20">
       <h2 className="text-xl font-bold mb-4 font-zen-dots text-purple-300">Video Tutorial</h2>
-      <div className="relative w-full overflow-hidden pb-[56.25%] rounded-2xl shadow-lg ring-1 ring-purple-500/30">
-        <iframe
-          className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/8TwyfnpmyVI"
-          title="Symphony Token Tutorial"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
+      <div className="relative w-full overflow-hidden rounded-2xl shadow-lg ring-1 ring-purple-500/30">
+        <div className="relative pb-[56.25%] h-0">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/8TwyfnpmyVI"
+            title="Symphony Token Tutorial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
       </div>
       <p className="text-sm text-purple-300/80 mt-4 text-center italic">
         Watch our comprehensive guide on claiming and managing your Symphony tokens
