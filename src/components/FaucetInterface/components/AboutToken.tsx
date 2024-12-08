@@ -2,10 +2,10 @@ import React from 'react';
 
 export const AboutToken: React.FC = () => {
   return (
-    <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 shadow-xl h-full">
-      <h2 className="text-2xl font-bold mb-4 text-white">About the Symphony Token</h2>
+    <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-purple-500/20 h-full">
+      <h2 className="text-xl font-bold mb-4 font-zen-dots text-purple-300">About the Symphony Token</h2>
       
-      <div className="space-y-6 text-white/80">
+      <div className="space-y-6 text-gray-300">
         <p className="leading-relaxed">
           The Symphony Token is a unique cryptocurrency designed to harmonize the dynamics of the decentralized web. With a finite supply of 8.2 billion tokens, the Symphony Token embraces the principle of scarcity, imbuing each unit with a sense of reverence.
         </p>
