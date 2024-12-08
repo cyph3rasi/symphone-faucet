@@ -5,8 +5,8 @@ export const TokenSetup = () => {
   return (
     <div className="lg:col-span-3 order-2 lg:order-3">
       <div className="bg-black/30 backdrop-filter backdrop-blur-lg p-6 rounded-3xl border border-green-500/20 h-full">
-        <h2 className="text-2xl font-spicy-rice mb-4 text-green-300">Add to MetaMask</h2>
-        <div className="space-y-4 text-sm text-gray-300">
+        <h2 className="text-2xl font-unbounded font-medium mb-4 text-green-300 tracking-tight">Add to MetaMask</h2>
+        <div className="space-y-4 text-sm text-gray-300 font-unbounded">
           <p>To view your Free PEPE tokens in MetaMask after claiming, follow these steps:</p>
           
           <div className="space-y-3" key={`token-setup-${Date.now()}`}>
@@ -15,7 +15,7 @@ export const TokenSetup = () => {
             <p>3. Click on the + icon</p>
             <p>4. In the token import interface, select "Custom Token"</p>
             <p>5. Copy and paste the Free PEPE Token contract address:</p>
-            <p className="font-mono text-xs break-all bg-black/40 p-2 rounded-lg select-all">
+            <p className="font-unbounded text-xs break-all bg-black/40 p-2 rounded-lg select-all">
               {TOKEN_ADDRESS}
             </p>
             <p>6. The token symbol (FREEPEPE) and decimals (18) should auto-populate</p>
