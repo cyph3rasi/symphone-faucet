@@ -38,14 +38,16 @@ export default function RootLayout({
       </head>
       <body className={`${electrolize.className} relative min-h-screen`}>
         {/* Fixed background with overlay */}
-        <div className="fixed inset-0 w-full h-full z-0">
+        <div className="fixed inset-0 w-full h-full z-0 overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+            className="absolute inset-0 bg-[length:200%] md:bg-cover bg-center bg-fixed select-none pointer-events-none"
             style={{
-              backgroundImage: `url('https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/backgrounds/nebula.jpg')`
+              backgroundImage: `url('https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/backgrounds/nebula.jpg')`,
+              transform: 'scale(1.1)',
+              willChange: 'transform',
             }}
           />
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-black/70" />
         </div>
 
         {/* Main content */}
@@ -54,5 +56,5 @@ export default function RootLayout({
         </main>
       </body>
     </html>
-  )
+  );
 }
