@@ -11,7 +11,7 @@ export const FaucetBalance: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center text-center">
+    <div className="flex flex-col items-center justify-center text-center space-y-2">
       <div className="text-lg font-unbounded text-green-400/90 mb-1">Faucet Balance:</div>
       <div>
         {loading ? (
@@ -41,6 +41,15 @@ export const FaucetBalance: React.FC = () => {
             </div>
           </div>
         )}
+      </div>
+
+      {/* Address display */}
+      <div 
+        className="text-xs font-unbounded text-green-400/60 px-3 py-1.5 rounded-lg bg-black/30 border border-green-500/20 hover:bg-black/40 transition-all duration-300 cursor-pointer select-all"
+        onClick={() => navigator.clipboard.writeText(FAUCET_ADDRESS)}
+        title="Click to copy address"
+      >
+        {FAUCET_ADDRESS}
       </div>
     </div>
   );
