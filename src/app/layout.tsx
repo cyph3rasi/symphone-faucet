@@ -41,9 +41,9 @@ export default function RootLayout({
         {/* Fixed background with overlay */}
         <div className="fixed inset-0 w-full h-full z-0">
           <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
             style={{
-              backgroundImage: `url('https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/background.jpg')`
+              backgroundImage: `url('https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/backgrounds/nebula.jpg')`
             }}
           />
           <div className="absolute inset-0 bg-black/60" />
