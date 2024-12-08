@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaucetBalance } from './FaucetBalance';
 
 export const HeaderLogo: React.FC = () => {
@@ -7,12 +8,24 @@ export const HeaderLogo: React.FC = () => {
     <div className="w-full flex flex-col items-center py-4 space-y-6">
       <Link 
         href="https://fallenones.xyz" 
-        className="group relative inline-block text-center py-8"
+        className="group relative inline-flex items-center text-center py-8"
       >
+        {/* PEPE Logo */}
+        <div className="relative w-32 md:w-40 lg:w-44 mr-4 md:mr-6 lg:mr-8 animate-title-float">
+          <Image
+            src="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/0.png"
+            alt="PEPE Logo"
+            width={200}
+            height={200}
+            className="object-contain"
+            priority
+          />
+        </div>
+
         {/* Main Title Container */}
         <div className="relative">
           {/* Main Title */}
-          <h1 className="text-8xl md:text-9xl font-spicy-rice relative animate-title-float">
+          <h1 className="text-7xl md:text-8xl lg:text-9xl font-spicy-rice relative animate-title-float">
             {/* Shadow layer - Now with exact matching positioning */}
             <span className="absolute -z-10 blur-sm text-green-950/40 translate-x-[6px] translate-y-[6px]">
               Free PEPE
