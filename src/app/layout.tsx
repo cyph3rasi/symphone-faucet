@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-
-import './globals.css'
+import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'Symphony Token Faucet',
-  description: 'Claim Symphony tokens from the faucet',
+export const metadata: Metadata = {
+  title: 'Symphone Token Faucet',
+  description: 'Claim your Symphone Tokens',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
       <head>
