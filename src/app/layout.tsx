@@ -38,6 +38,18 @@ export default function RootLayout({
         <link rel="icon" href="https://ahalaffiyxmywkxeffzc.supabase.co/storage/v1/object/public/stuff/media/thunder.png" />
       </head>
       <body className={electrolize.className}>
+        {/* Fixed background with overlay */}
+        <div className="fixed inset-0 w-full h-full z-0">
+          <div 
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/path/to/your/image.jpg')`,
+            }}
+          />
+          <div className="absolute inset-0 bg-black/60" /> {/* 60% dark overlay */}
+        </div>
+
+        {/* Navigation */}
         <nav className="fixed top-0 left-0 w-full bg-black/50 backdrop-blur-sm z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between h-16">
@@ -52,7 +64,9 @@ export default function RootLayout({
             </div>
           </div>
         </nav>
-        <main className="pt-16">
+
+        {/* Main content */}
+        <main className="pt-16 relative z-10">
           {children}
         </main>
       </body>
