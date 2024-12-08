@@ -28,7 +28,12 @@ export const useFaucet = () => {
         setShowConfetti(false);
       }, 5000);
     } catch (err: any) {
-      setError(err.message || 'Failed to claim tokens');
+      // Check for user rejection
+      if (err.code === 'ACTION_REJECTED') {
+        setError('Transaction canceled by user.');
+      } else {
+        setError(err.message || 'Failed to claim tokens');
+      }
     } finally {
       setLoading(false);
     }
