@@ -35,6 +35,9 @@ const FaucetInterface: React.FC = () => {
           <div className="order-1 lg:order-2 lg:col-span-6 space-y-6">
             <div className="bg-opacity-10 bg-white backdrop-filter backdrop-blur-lg p-8 rounded-3xl border border-purple-500/20">
               <div className="text-center mb-8">
+                <h2 className="text-4xl font-bold mb-3 font-zen-dots bg-gradient-to-r from-purple-400 via-pink-300 to-purple-400 text-transparent bg-clip-text">
+                  Symphony Token Fountain
+                </h2>
                 <p className="text-gray-400 font-orbitron">Claim 1000 SYMPH tokens</p>
               </div>
 

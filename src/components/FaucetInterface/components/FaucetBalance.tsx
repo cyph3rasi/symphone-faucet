@@ -51,7 +51,7 @@ export const FaucetBalance: React.FC = () => {
 
       <div className="relative z-10">
         <div className="flex flex-col items-center space-y-2">
-          <div className="text-sm font-zen-dots text-purple-300/80">Symphony Token Balance</div>
+          <div className="text-sm font-zen-dots text-purple-300/80">Symphony Token Faucet Balance</div>
           
           {loading ? (
             <div className="animate-pulse flex space-x-2 items-center">
@@ -69,14 +69,8 @@ export const FaucetBalance: React.FC = () => {
             </div>
           )}
           
-          {/* Contract address with subtle reveal on hover */}
-          <div className="group relative cursor-help">
-            <div className="text-xs text-gray-400/60 font-mono transition-opacity duration-300 group-hover:opacity-0">
-              Hover to view contract
-            </div>
-            <div className="absolute inset-0 text-xs text-gray-400/80 font-mono opacity-0 transition-opacity duration-300 group-hover:opacity-100 whitespace-nowrap overflow-hidden">
-              {FAUCET_ADDRESS}
-            </div>
+          <div className="text-xs text-gray-400/80 font-mono">
+            {FAUCET_ADDRESS}
           </div>
         </div>
       </div>
