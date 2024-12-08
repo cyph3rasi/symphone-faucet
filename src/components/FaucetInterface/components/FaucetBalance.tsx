@@ -2,11 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { useFaucetBalance } from '../hooks/useFaucetBalance';
 import { FAUCET_ADDRESS } from '../constants';
 
+interface Particle {
+  id: number;
+  style: React.CSSProperties;
+}
+
 export const FaucetBalance: React.FC = () => {
   const { balance, loading, error } = useFaucetBalance();
-  const [particles, setParticles] = useState<Array<{ id: number, style: React.CSSProperties }>>([]);
+  const [particles, setParticles] = useState<Particle[]>([]);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const newParticles = Array.from({ length: 20 }, (_, i) => ({
       id: i,
       style: {
@@ -29,16 +36,18 @@ export const FaucetBalance: React.FC = () => {
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-purple-900/30 via-pink-800/30 to-purple-900/30 animate-pulse" />
       
-      {/* Floating particles effect */}
-      <div className="absolute inset-0 overflow-hidden">
-        {particles.map(particle => (
-          <div
-            key={particle.id}
-            className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-float"
-            style={particle.style}
-          />
-        ))}
-      </div>
+      {/* Floating particles effect - only rendered on client side */}
+      {isClient && (
+        <div className="absolute inset-0 overflow-hidden">
+          {particles.map((particle) => (
+            <div
+              key={particle.id}
+              className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-float"
+              style={particle.style}
+            />
+          ))}
+        </div>
+      )}
 
       <div className="relative z-10">
         <div className="flex flex-col items-center space-y-3">
