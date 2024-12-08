@@ -6,7 +6,6 @@ export const HeaderLogo: React.FC = () => {
     <div className="w-full flex justify-center py-4">
       <Link 
         href="https://fallenones.xyz" 
-        target="_blank"
         className="group relative inline-block text-center hover:scale-105 transition-transform duration-300 ease-in-out"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 via-pink-500/20 to-purple-600/20 blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-300" />
