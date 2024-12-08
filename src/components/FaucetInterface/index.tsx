@@ -19,9 +19,14 @@ const FaucetInterface: React.FC = () => {
 
   return (
     <div className="min-h-screen py-12 px-4 relative">
-      <div className="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Main claim interface - 5 columns */}
-        <div className="lg:col-span-5">
+      <div className="max-w-[90rem] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Left Column - About Section */}
+        <div className="lg:col-span-1">
+          <AboutToken />
+        </div>
+
+        {/* Middle Column - Main Interface, Instructions, Video */}
+        <div className="lg:col-span-1 space-y-6">
           <ClaimInterface 
             account={account}
             loading={walletLoading || faucetLoading}
@@ -31,20 +36,16 @@ const FaucetInterface: React.FC = () => {
             onClaim={claimTokens}
             onClaimAgain={handleClaimAgain}
           />
-        </div>
-
-        {/* Instructions section - 4 columns */}
-        <div className="lg:col-span-4">
           <Instructions />
+          {/* Video Tutorial placeholder - You'll need to create this component */}
+          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 shadow-xl">
+            <h2 className="text-2xl font-bold mb-4 text-white">Video Tutorial</h2>
+            {/* Add video component here */}
+          </div>
         </div>
 
-        {/* About Token sidebar - 3 columns */}
-        <div className="lg:col-span-3">
-          <AboutToken />
-        </div>
-
-        {/* Token Setup section - full width */}
-        <div className="lg:col-span-12">
+        {/* Right Column - Token Setup */}
+        <div className="lg:col-span-1">
           <TokenSetup key={`token-setup-container-${Date.now()}`} />
         </div>
       </div>
