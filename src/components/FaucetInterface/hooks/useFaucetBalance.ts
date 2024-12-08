@@ -10,16 +10,15 @@ export const useFaucetBalance = () => {
   useEffect(() => {
     const fetchBalance = async () => {
       try {
-        if (typeof window.ethereum !== 'undefined') {
-          const provider = new ethers.providers.Web3Provider(window.ethereum);
-          const tokenContract = new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, provider);
-          const balance = await tokenContract.balanceOf(FAUCET_ADDRESS);
-          setBalance(ethers.utils.formatUnits(balance, 18));
-          setError(null);
-        }
+        // Use a default RPC provider for Avalanche C-Chain
+        const provider = new ethers.providers.JsonRpcProvider('https://api.avax.network/ext/bc/C/rpc');
+        const tokenContract = new ethers.Contract(TOKEN_ADDRESS, TOKEN_ABI, provider);
+        const balance = await tokenContract.balanceOf(FAUCET_ADDRESS);
+        setBalance(ethers.utils.formatUnits(balance, 18));
+        setError(null);
       } catch (err) {
-        setError('Error fetching faucet balance');
         console.error('Error fetching balance:', err);
+        setError('Error fetching faucet balance');
       } finally {
         setLoading(false);
       }
