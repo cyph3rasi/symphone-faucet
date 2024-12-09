@@ -1,26 +1,23 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) translateX(0);
-    opacity: 0;
-  }
-  25% {
-    transform: translateY(-20px) translateX(10px);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(-40px) translateX(-10px);
-    opacity: 0.8;
-  }
-  75% {
-    transform: translateY(-20px) translateX(10px);
-    opacity: 0.5;
-  }
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 51;
+  --background-end-rgb: 26, 0, 51;
 }
 
-.animate-float {
-  animation: float 8s infinite;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  font-family: 'Electrolize', sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: 'Zen Dots', sans-serif;
 }
